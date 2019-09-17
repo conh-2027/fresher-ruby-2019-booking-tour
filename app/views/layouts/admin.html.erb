@@ -5,12 +5,12 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= render "layouts/shim" %>
+   <%= render "layouts/shim" %>
   </head>
 
   <body>
-    <%= render "layouts/header" %>
+    <%= render "layouts/admin/header" %>
     <%= yield %>
-    <%= render "layouts/footer" %>
+    <%= render "layouts/admin/sidebar" %>
   </body>
 </html>
