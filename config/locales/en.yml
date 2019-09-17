@@ -1,5 +1,17 @@
 en:
   layouts:
+    admin:
+      travello: "Travello Viet Name"
+      navbar:
+        signout: "Sign out"
+      sidebar:
+        dashboard: "Dashoard"
+        user: "User"
+        tour: "Tour"
+        booking_request: "Booking requests"
+        user_review: "User reviews"
+        revenue: "Revenue"
+        category: "Category"
     header:
       travello: "Travello Viet name"
       hotline: "Call us: 00-56 445 678 33"
