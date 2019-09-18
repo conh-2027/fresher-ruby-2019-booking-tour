@@ -1,0 +1,2 @@
+validate:
+  VALID_REGEX_EMAIL: !ruby/regexp '/\A[^@\s]+@[^@\s]+\z/'
