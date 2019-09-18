@@ -1,0 +1,27 @@
+@import 'bootstrap';
+@import 'font-awesome';
+@import 'about_responsive';
+@import 'about';
+@import 'contact';
+@import 'contact_responsive';
+@import 'destinations_responsive';
+@import 'destinations';
+@import 'elements';
+@import 'elements_responsive';
+@import 'main_styles';
+@import 'news';
+@import 'news_responsive';
+@import 'responsive';
+@import 'owl.carousel';
+@import 'owl.theme.default';
+@import 'animate';
+
+.background_image {
+  background-image:url(home_slider.jpg);
+}
+.parallax_background {
+  background-image:url(footer_1.jpg);
+}
+.intro_background {
+  background-image:url(intro.png);
+}
