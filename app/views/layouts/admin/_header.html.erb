@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+  <ul class="navbar-nav ml-auto">
+    <div class="topbar-divider d-none d-sm-block"></div>
+    <li class="nav-item dropdown no-arrow">
+      <%= link_to "#", data: {"role": "button", "data-toggle": "dropdown",
+        "aria-haspopup": "ture", "aria-expanded": "false"}, id: "userDropdown",
+        class: "nav-link dropdown-toggle" do %>
+        <span class="mr-2 d-none d-lg-inline text-gray-600 small"></span>
+        <%= image_tag Settings.avatar, class: "img-profile rounded-circle w-100" %>
+      <% end %>
+      <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+        <%= link_to "#", class: "dropdown-item" do %>
+          <i class="fa fa-home fa-sm fa-fw mr-2 text-black-400"></i>
+          <%= t ".title" %>
+        <% end %>
+        <%= link_to "#", class: "dropdown-item" do %>
+          <i class="fa fa-user fa-sm fa-fw mr-2 text-black-400"></i>
+          <%= t ".profile" %>
+        <% end %>
+        <div class="dropdown-divider"></div>
+        <%= link_to "#", method: :delete, class: "dropdown-item" do %>
+          <i class="fa fa-sign-out fa-sm fa-fw mr-2 text-black-400"></i>
+          <%= t ".sign_out" %>
+        <% end %>
+      </div>
+    </li>
+  </ul>
+</nav>

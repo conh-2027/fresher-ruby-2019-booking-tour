@@ -1,4 +1,4 @@
-//= require jquery3
+//= require jquery
 //= require rails-ujs
 //= require popper
 //= require bootstrap-sprockets
@@ -8,6 +8,7 @@
 //= require destinations
 //= require news
 //= require custom
+//= require sb-admin-2.js
 //= require jquery.easing
 //= require parallax.min.js
 //= require isotope.pkgd.min.js
