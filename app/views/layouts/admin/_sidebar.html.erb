@@ -1,35 +1,43 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-  <hr class="sidebar-divider my-0">
   <li class="nav-item active">
-    <a class="nav-link" href="index.html">
-    <i class="fa fa-fw fa-tachometer-alt"></i>
-    <label><%= t ".dashboard" %></label></a>
+    <%= link_to class: "nav-link" do %>
+      <i class="fa fa-fw fa-tachometer-alt"></i>
+      <label><%= t ".dashboard" %></label></a>
+    <% end %>
   </li>
   <hr class="sidebar-divider">
-  <div class="sidebar-heading">
-  </div>
   <li class="nav-item">
-    <%= link_to "admin_users_path", class: "nav-link collapsed" do %>
-    <i class="fa fa-fw fa-user"></i>
-    <label><%= t ".user" %></label>
+    <%= link_to "#", class: "nav-link collapsed" do %>
+      <i class="fa fa-fw fa-user"></i>
+      <label><%= t ".user" %></label>
     <% end %>
   </li>
+  <hr class="sidebar-divider">
   <li class="nav-item">
-    <%= link_to "admin_courses_path", class: "nav-link collapsed" do %>
-    <i class="fa fa-fw fa-cog"></i>
-    <label><%= t".course" %></label>
+    <%= link_to "#", class: "nav-link collapsed" do %>
+      <i class="fa fa-fw fa-cog"></i>
+      <label><%= t ".tour" %></label>
     <% end %>
   </li>
+  <hr class="sidebar-divider">
   <li class="nav-item">
-    <%= link_to "admin_words_path", class: "nav-link" do %>
-    <i class="fa fa-fw fa-file-word-o"></i>
-    <label><%= t ".manage_words" %></label>
+    <%= link_to "#", class: "nav-link" do %>
+      <i class="fa fa-fw fa-file-word-o"></i>
+      <label><%= t ".booking_request" %></label>
     <% end %>
   </li>
+  <hr class="sidebar-divider">
   <li class="nav-item">
     <%= link_to "admin_questions_path", class: "nav-link" do %>
-    <i class="fa fa-fw fa-question-circle"></i>
-    <label><%= t ".manage_questions" %></label>
+      <i class="fa fa-fw fa-question-circle"></i>
+      <label><%= t ".user_review" %></label>
+    <% end %>
+  </li>
+  <hr class="sidebar-divider">
+  <li class="nav-item">
+    <%= link_to "admin_questions_path", class: "nav-link" do %>
+      <i class="fa fa-fw fa-question-circle"></i>
+      <label><%= t ".category" %></label>
     <% end %>
   </li>
 </ul>

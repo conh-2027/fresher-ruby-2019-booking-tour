@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>FresherRuby2019BookingTour</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-   <%= render "layouts/shim" %>
+    <title><%= full_title yield :title %></title>
+    <%= render "layouts/shim" %>
   </head>
 
-  <body>
-    <%= render "layouts/admin/header" %>
-    <%= yield %>
-    <%= render "layouts/admin/sidebar" %>
+  <body id="page-top">
+    <div id="wrapper">
+      <%= render "layouts/admin/sidebar" %>
+      <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content">
+          <%= render "layouts/admin/navbar" %>
+          <div class="container-fluid">
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
