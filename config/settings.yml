@@ -14,7 +14,7 @@ omniauth:
 role_default: 0
 tours:
   duration:
-    day_number: 0
+    day_number: 1
   price:
     default_price: 0
 theme:

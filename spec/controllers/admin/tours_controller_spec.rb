@@ -38,4 +38,25 @@ RSpec.describe Admin::ToursController, type: :controller do
       expect{assigns(:tour).to change(Tour.count).by(1)}
     end
   end
+
+  describe "GET #edit" do
+    it "is expected render template" do
+      expect{response.to render_template :new}
+    end
+
+    it "is expected status 200" do
+      expect{response.status eq 200 }
+    end
+  end
+  
+  describe "PATCH #update" do
+    let(:category) {FactoryBot.create :category, name: "New category"}
+    let(:params) {FactoryBot.create :tour, category_id: category.id, name: "TOur"}
+    before do
+      post :update, params: params.attributes
+    end
+    it "update success" do
+      expect{(params.name).to eq("Tour")}
+    end
+  end
 end

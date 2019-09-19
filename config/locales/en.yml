@@ -21,6 +21,15 @@ en:
       create:
         success_created: "Success created"
         fail_create: "Fail create"
+      edit:
+        edit: "edit"
+        update: "Update"
+      update:
+        update_fail: "Update faile"
+        update_success: "Update success"
+  shared:
+    error_messages:
+      error: "error"
   layouts:
     application:
       travello: "Travello"
