@@ -26,3 +26,67 @@
 .intro_background {
   background-image:url(intro.png);
 }
+
+.container-login {
+  margin: 100px 50px;
+  height: 100%;
+  align-content: center;
+}
+
+.card {
+  height: 400px;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 400px;
+}
+
+.login {
+  height: 383px;
+}
+
+.login_btn {
+  font-size: 24px;
+  font-family: sans-serif;
+  color: black;
+}
+
+.remember {
+  margin-left: 4px;
+  input {
+    width: 14px;
+    height: 14px;
+    margin-left: 15px;
+    margin-right: 5px;
+  }
+}
+
+.new_user {
+  font-size: 18px;
+  font-family: none;
+}
+
+.register, .edit_profile {
+  height: 100%;
+  a {
+    margin-top: -54px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 15px;
+  }
+}
+
+#error_explanation {
+  text-align: left;
+}
+
+#error_explanation li {
+  color: red;
+  font-size: 15px;
+}
+
+#error_explanation h2 {
+  font-size: 14px;
+}
+
+.img-profile {
+  width: 40px;
+}

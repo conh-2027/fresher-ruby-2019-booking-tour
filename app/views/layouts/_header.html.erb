@@ -1,3 +1,4 @@
+<div class="background_image"></div>
 <header class="header">
   <div class="container">
     <div class="row">
@@ -5,7 +6,7 @@
         <div class="header_content d-flex flex-row align-items-center justify-content-start">
           <div class="header_content_inner d-flex flex-row align-items-end justify-content-start">
             <div class="logo">
-              <%= link_to t(".travello"), "#" %>
+              <%= link_to t(".travello"), root_path %>
             </div>
             <div class="header_phone ml-auto"><%= t ".hotline" %></div>
             <nav class="main_nav">
@@ -23,16 +24,40 @@
   </div>
   <div class="header_social d-flex flex-row align-items-center justify-content-start">
     <ul class="d-flex flex-row align-items-start justify-content-start">
+    
+    <% if user_signed_in? %>
+      <li class="dropdown">
+        <%= link_to "#", data: { toggle: "dropdown" }, class: "dropdown-toggle" do %>
+          <%= current_user.name %><b class="caret"></b>
+        <% end %>
+        <%= image_tag get_avatar(current_user), class: "img-profile rounded-circle w-10" %>
+        <ul class="dropdown-menu">
+            <li class="dropdown-item">
+              <%= link_to t(".profile"), edit_user_registration_path(current_user) %>
+            </li>
+            <li class="dropdown-item">
+              <%= link_to t(".sign_out"), destroy_user_session_path, method: :delete %>
+            </li>
+        </ul>
+      </li>
+    <% else %>
       <li>
-        <%= link_to "path" do %>
-          <i class="fa fa-facebook" aria-hidden="true"></i>
+        <%= link_to "#" do %>
+         <span><i class="fa fa-facebook-square"></i></span>
         <% end %>
       </li>
       <li>
-        <%= link_to "path" do %>
-          <i class="fa fa-twitter" aria-hidden="true"></i>
+        <%= link_to "#" do %>
+          <span><i class="fa fa-google-plus-square"></i></span>
         <% end %>
       </li>
+      <li>
+        <%= link_to new_user_session_path do %>
+          <i class="fa fa-sign-in">Sign in</i>
+        <% end %>
+      </li>
+    <% end %>
+    
     </ul>
   </div>
 </header>
