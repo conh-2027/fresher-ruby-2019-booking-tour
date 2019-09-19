@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_17_110955) do
+ActiveRecord::Schema.define(version: 2019_09_23_063639) do
 
   create_table "bank_accounts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -48,6 +48,9 @@ ActiveRecord::Schema.define(version: 2019_09_17_110955) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "review_id"
+    t.string "commentable_type"
+    t.bigint "commentable_id"
+    t.index ["commentable_type", "commentable_id"], name: "index_comments_on_commentable_type_and_commentable_id"
   end
 
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -76,7 +79,7 @@ ActiveRecord::Schema.define(version: 2019_09_17_110955) do
 
   create_table "revenues", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "tour_id"
-    t.float "pirce", default: 0.0
+    t.float "price", default: 0.0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -113,6 +116,9 @@ ActiveRecord::Schema.define(version: 2019_09_17_110955) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "provider"
+    t.string "uid"
+    t.text "image"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

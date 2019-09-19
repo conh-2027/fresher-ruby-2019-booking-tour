@@ -1,9 +1,39 @@
 validate:
   VALID_REGEX_EMAIL: !ruby/regexp '/\A[^@\s]+@[^@\s]+\z/'
-avatar: "team_1.jpg"
+default_sort: created_at desc"
+avatar: "team_3.jpg"
+tour_picture: "destination_2.jpg"
 users:
   email:
-    regex: !ruby/regexp '/\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i'
-    max_length: 250
+    regex: !ruby/regexp '/\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i'
+    max_length: 255
   name:
     max_length: 50
+  min_password_length: 3
+  max_password_length: 128
+omniauth:
+  facebook: "facebook"
+role_default: 0
+tours:
+  duration:
+    day_number: 1
+  price:
+    default_price: 0
+theme:
+  paging: 'twitter-bootstrap-4'
+paging:
+  paging_number: 10
+average_default: 1
+round_default: 2
+length_description: 40
+max_star: 5
+min_star: 1
+row_default: 12
+time_post_review: "%B %e, %Y at %I:%M %p"
+date_format: "%m/%d/%Y"
+review_content: 100
+bank_accounts:
+  amount: 0
+bookings:
+  people_number: 1
+  price: 0
