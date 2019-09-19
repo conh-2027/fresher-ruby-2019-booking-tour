@@ -3,7 +3,6 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require about
-//= require contact
 //= require elements
 //= require destinations
 //= require news

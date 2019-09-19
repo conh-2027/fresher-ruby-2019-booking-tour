@@ -7,3 +7,7 @@ users:
     max_length: 250
   name:
     max_length: 50
+  min_password_length: 3
+  max_password_length: 128
+omniauth:
+  facebook: "facebook"

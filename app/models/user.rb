@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
-    :recoverable, :rememberable, :validatable
+    :recoverable, :rememberable, :validatable,
+    :omniauthable, omniauth_providers: %i(facebook).freeze
   has_many :likes, dependent: :destroy
   has_many :ratings, dependent: :destroy
   has_many :comments, dependent: :destroy
@@ -16,4 +17,26 @@ class User < ApplicationRecord
     format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
   validates :password, presence: true, allow_nil: true
   accepts_nested_attributes_for :picture, allow_destroy: true
+
+  class << self
+    def from_omniauth auth
+      where(provider: auth.provider, uid: auth.id).first_or_create do |user|
+        user.email = auth.info.email
+        user.name = auth.info.name
+        user.uid = auth.uid
+        user.image = auth.info.image
+        user.password = Devise.friendly_token[Settings.users.min_password_length,
+          Settings.users.max_password_length]
+      end
+    end
+
+    def new_with_session params, session
+      tap do |user|
+        if data = session["devise.#facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
+          next unless user.email.blank?
+          user.email = data["email"]
+        end
+      end
+    end
+  end
 end
