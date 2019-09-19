@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root to: "homes#index"
+  root to: "tours#index"
+  resources :tours, only: %i(index show)
   devise_for :users, controllers: {omniauth_callbacks: "users/omniauth_callbacks", sessions: "users/sessions"}
   
   namespace :admin do
