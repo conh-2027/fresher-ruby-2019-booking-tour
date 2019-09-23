@@ -5,9 +5,11 @@ ruby "2.5.0"
 
 gem "bootsnap", ">= 1.1.0", require: false
 gem "bootstrap", "~> 4.3.1"
+gem "carrierwave"
 gem "coffee-rails", "~> 4.2"
 gem "config"
 gem "devise"
+gem "ffaker"
 gem "figaro"
 gem "font-awesome-rails"
 gem "jbuilder", "~> 2.5"

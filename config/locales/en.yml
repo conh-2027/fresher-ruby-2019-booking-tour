@@ -17,6 +17,8 @@ en:
     header:
       travello: "Travello Viet name"
       hotline: "Call us: 00-56 445 678 33"
+      profile: "Profile"
+      sign_out: "Sign out"
     footer:
       email_travello: "travello@gmail.com"
       offices: "Office@travellobusiness.com"
@@ -44,3 +46,53 @@ en:
       description: "Nulla pretium tincidunt felis, nec."
       price: "From $679"
       special: "Special Offer"
+  users:
+    sessions:
+      new:
+        login: "Login"
+        remember_me: "Remember me"
+        new_user: "New user?"
+    shared:
+      errors_messages:
+        not_saved: "Not save"
+      links:
+        sign_up: "Sign up"
+        login: "Login"
+        forgot_password: "Forgot your password?"
+        didn't_recevie: "Didn't receive confirmation instructions?"
+        sessions: "sessions"
+        registrations: "registrations"
+        passwords: "passwords"
+        confirmations: "confirmations"
+    registrations:
+      new:
+        name: "Name"
+        email: "E-mail"
+        password: "Password"
+        sign_up: "Sign up"
+        phone_number: "Phone number"
+        characters_minimum: "%{count} charaters minimum "
+        new_password: "New password"
+        current_password: "Current password"
+        password_confirmation: "Password confirmation"
+      edit:
+        edit: "Edit"
+        update: "Update"
+        email: "Email"
+        name: "Name"
+        characters_minimum: "%{count} characters minium"
+        password: "Password"
+        password_confirmation: "password confirmation"
+        current_password: "curernt password"
+        new_password: "new password"
+        back: "Back"
+    passwords:
+      edit:
+        off: "off"
+        new_password: "New password"
+        change_password: "Change your password"
+        confirm_new_password: "Confirm new password"
+        change_my_password: "Change my password"
+      new:
+        forgot_password: "Forgot your password?"
+        send_me: "Send me reset password instructions"
