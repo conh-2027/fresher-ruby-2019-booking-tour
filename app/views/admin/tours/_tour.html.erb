@@ -1,0 +1,18 @@
+<tr >
+  <td><%= index_of_list @tours, tour_counter %></td>
+  <td><%= tour.name %></td>
+  <td><%= tour.duration %> <%= t ".day" %> </td>
+  <td><%= tour.price %> <%= t ".$" %></td>
+  <td><%= tour.category_name %></td>
+  <td>
+    &ensp; 
+    <%= link_to edit_admin_tour_path(tour), class: "btn btn-warning" do %>
+      <i class="fa fa-edit"></i>
+    <% end %>
+    &ensp;
+    <%= link_to admin_tour_path(tour), method: :delete,
+      data: { confirm: t(".are_you_sure?") }, class: "btn btn-danger" do %>
+      <i class="fa fa-trash"></i>
+    <% end %>
+  </td>
+</tr>

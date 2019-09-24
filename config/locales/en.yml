@@ -1,4 +1,26 @@
 en:
+  admin:
+    tours:
+      index:
+        stt: "STT"
+        tour: "Tours"
+        name: "Name"
+        category_name: "Category name"
+        price: "Price"
+        duration: "Duration"
+        action: "Action"
+        tour_list: "Tour list"
+        create_tour: "Create tour"
+      tour:
+        day: "day"
+        $: "$"
+        are_you_sure?: "Are you sure ?"
+      new:
+        create: "Create"
+        new: "New"
+      create:
+        success_created: "Success created"
+        fail_create: "Fail create"
   layouts:
     application:
       travello: "Travello"
@@ -96,3 +118,4 @@ en:
       new:
         forgot_password: "Forgot your password?"
         send_me: "Send me reset password instructions"
+        email: "email"

@@ -5,6 +5,7 @@ ruby "2.5.0"
 
 gem "bootsnap", ">= 1.1.0", require: false
 gem "bootstrap", "~> 4.3.1"
+gem "bootstrap4-kaminari-views"
 gem "carrierwave"
 gem "coffee-rails", "~> 4.2"
 gem "config"
@@ -15,6 +16,7 @@ gem "font-awesome-rails"
 gem "jbuilder", "~> 2.5"
 gem "jquery-easing-rails"
 gem "jquery-rails"
+gem "kaminari"
 gem "mini_racer"
 gem "mysql2", ">= 0.4.4", "< 0.6.0"
 gem "omniauth"
@@ -30,6 +32,7 @@ gem "uglifier", ">= 1.3.0"
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   gem "factory_bot_rails"
+  gem "rails-controller-testing"
   gem "rspec-rails"
 end
 

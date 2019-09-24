@@ -39,6 +39,12 @@
   width: 400px;
 }
 
+.custom-card {
+  height: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 100%;
+}
 .login {
   height: 383px;
 }
@@ -89,7 +95,10 @@
 .img-profile {
   width: 40px;
 }
-
 .header_social ul li a i {
   font-size: 20px;
+}
+
+#accordionSidebar {
+  height: auto;
 }
