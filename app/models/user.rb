@@ -11,13 +11,15 @@ class User < ApplicationRecord
   has_one :picture, as: :picturetable, dependent: :destroy
   VALID_EMAIL_REGEX = Settings.users.email.regex
   validates :name, presence: true,
-    length: {maximum: Settings.users.name.max_length}
+   length: {maximum: Settings.users.name.max_length}
   validates :email, presence: true,
     length: {maximum: Settings.users.email.max_length},
     format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
+  validates :phone_number, presence: true, allow_nil: true
   validates :password, presence: true, allow_nil: true
   accepts_nested_attributes_for :picture, allow_destroy: true
-
+  enum role: {guest: 0, user: 1, admin: 2}
+  
   class << self
     def from_omniauth auth
       where(provider: auth.provider, uid: auth.id).first_or_create do |user|
