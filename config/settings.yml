@@ -29,6 +29,10 @@ max_star: 5
 min_star: 1
 row_default: 12
 time_post_review: "%B %e, %Y at %I:%M %p"
+date_format: "%m/%d/%Y"
 review_content: 100
 bank_accounts:
-  amount: 10
+  amount: 0
+bookings:
+  people_number: 1
+  price: 0

@@ -79,7 +79,7 @@ ActiveRecord::Schema.define(version: 2019_09_23_063639) do
 
   create_table "revenues", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "tour_id"
-    t.float "pirce", default: 0.0
+    t.float "price", default: 0.0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
