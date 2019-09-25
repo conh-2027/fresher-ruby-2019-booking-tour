@@ -16,5 +16,6 @@ $(document).on("turbolinks:load", function(){
 		score: function() {
 			return $(this).attr('data-score')
 		}
-	});
+  });
+  $('#datetimepicker').datetimepicker();
 });

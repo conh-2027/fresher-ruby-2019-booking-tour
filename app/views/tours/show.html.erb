@@ -15,15 +15,13 @@
     </div>
     <div class="row">
       <div class="col-10">
-        <div class="x">
-          <%= image_tag "destination_1.jpg", size: "900x450" %>
-          <div class="spec_offer text-center">
-            <%= link_to @tour.category_name, "#" %>
-          </div>
+        <%= image_tag tour_picture(@tour), size: "900x450" %>
+        <div class="spec_offer text-center">
+          <%= link_to @tour.category_name, "#" %>
         </div>
       </div>
       <div class="col">
-        <button class="home_search_button"><%= t ".book" %></button>
+        <%= render "booking_tour" %>
       </div>
     </div>
     <div class="row">
