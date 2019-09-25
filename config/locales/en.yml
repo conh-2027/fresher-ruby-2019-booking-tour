@@ -25,8 +25,12 @@ en:
         edit: "edit"
         update: "Update"
       update:
-        update_fail: "Update faile"
         update_success: "Update success"
+      destroy:
+        destroy_success: "Destroy success"
+        destroy_fail: "Destroy fail"
+      load_tour:
+        not_found: "Not found"
   shared:
     error_messages:
       error: "error"

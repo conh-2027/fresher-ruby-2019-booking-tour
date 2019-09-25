@@ -1,5 +1,5 @@
 class Admin::ToursController < Admin::BaseController
-  before_action :load_tour, only: %i(edit update)
+  before_action :load_tour, only: %i(edit update destroy)
   
   def index
     @tours = Tour.last_tours.page(params[:page])
@@ -30,6 +30,15 @@ class Admin::ToursController < Admin::BaseController
       flash[:danger] = t ".update_fail"
       render :edit
     end
+  end
+
+  def destroy
+    if @tour.destroy
+      flash[:success] = t ".destroy_success"
+    else
+      flash[:danger] = t ".destory_fail"
+    end
+    redirect_to admin_tours_path
   end
 
   private
