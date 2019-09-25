@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   resources :tours, only: %i(index show) do
     resources :ratings, only: :create
     resources :reviews
+    resources :bookings
   end
-  
   resources :reviews do
     resources :likes
     resources :comments do
