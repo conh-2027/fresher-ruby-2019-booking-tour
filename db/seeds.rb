@@ -16,7 +16,7 @@ end
 
 2.times do
   BankAccount.create(
-    name:  FFaker::Name.last_name,
+    name:  "Master Card",
     account_number: FFaker::Code.ean,
     user_id: User.last.id,
     amount: 400

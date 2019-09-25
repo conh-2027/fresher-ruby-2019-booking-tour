@@ -1,4 +1,5 @@
 en:
+  start_time: "start time cannot current time"
   admin:
     tours:
       index:
