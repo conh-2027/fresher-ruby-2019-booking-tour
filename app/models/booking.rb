@@ -1,23 +1,24 @@
 class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :tour
-  validates :pirce, presence: true,
+  validates :price, presence: true,
     numericality: {greater_than_or_equal_to: Settings.bookings.price}
   validates :people_number, presence: true,
     numericality: {greater_than_or_equal_to: Settings.bookings.people_number}
   validates :address, presence: true
   validates :start_time, presence: true
-  validate :start_time_cannot_less_current_time
+  validate :start_time_booking
   BOOKING_PARAMS = %i(price phone_number people_number address start_time)
-
-  def total_money
-    people_number*price
-  end
 
   private
 
-  def start_time_cannot_less_current_time
-    return unless start_time > DateTime.now
-    errors.add(:start_time, t(".start time can't current time"))
+  def start_time_booking
+    return if self.start_time.nil?
+    return unless convert_date(DateTime.now) > convert_date(self.start_time)
+    errors.add(:start_time, I18n.t(".start_time"))
+  end
+
+  def convert_date date
+    date.strftime(Settings.date_format) if date.present?
   end
 end
