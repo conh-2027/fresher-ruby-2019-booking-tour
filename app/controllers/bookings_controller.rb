@@ -1,20 +1,14 @@
 class BookingsController < ApplicationController
-  before_action :authenticate_user!, :load_tour
-
-  def new
-    @booking = Booking.new
-  end
-  
+  before_action :authenticate_user!, :load_tour, only: :create
 
   def create
     @booking = current_user.bookings.build booking_params
-    return unless current_user.account_of_user_enough(BookingService.new(@tour, @booking).total_money)
-    if @booking.save!
-      flash[:success] = t ".success_booking"
-      redirect_to @tour
-    else
-      flash[:danger] = t ".success_booking"
-      render :new
+    @booking.tour = @tour
+    booking_sercise = BookingService.new(@booking, params[:tour_price].to_i)
+    byebug
+    if booking_sercise.booking_request? && @booking.save!
+      booking_sercise.bank_account_after_booking
+      respond_to :js
     end
   end
 

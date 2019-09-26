@@ -15,7 +15,7 @@
     </div>
     <div class="row">
       <div class="col-10">
-        <%= image_tag tour_picture(@tour), size: "900x450" %>
+        <%= image_tag tour_picture(@tour), size: Settings.picture_size %>
         <div class="spec_offer text-center">
           <%= link_to @tour.category_name, "#" %>
         </div>

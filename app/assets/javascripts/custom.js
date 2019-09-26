@@ -17,5 +17,26 @@ $(document).on("turbolinks:load", function(){
 			return $(this).attr('data-score')
 		}
   });
-  $('#datetimepicker').datetimepicker();
+  
+  $('#datetimepicker').datetimepicker({
+    format: 'm/d/Y'
+  });
+  
+  $('#booking_people_number').change(function(){
+    caculator_price();
+  });
+  
+  function caculator_price(){
+    let people_number = parseInt($('#booking_people_number').val());
+    let tour_price = parseInt($('#tour_price').val());
+    if(people_number >= 1) {
+      price = people_number * tour_price;
+      $('#booking_price').val(price);
+    }else {
+      $('#booking_price').val(0);
+    }
+  }
+  $('#booking').on('submit', function() {
+    $('#success_booking').modal('show');
+  });
 });

@@ -23,15 +23,6 @@ class User < ApplicationRecord
   def liked? review_id
     self.likes.find_by(review_id: review_id).present?
   end
-  
-  def total_money 
-    
-  end
-
-  def account_of_user_enough total_money
-    self.bank_accounts.account_amount_check(total_money).present? ? true : false
-  end
-
   class << self
     def from_omniauth auth
       where(provider: auth.provider, uid: auth.id).first_or_create do |user|

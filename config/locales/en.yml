@@ -1,4 +1,5 @@
 en:
+  start_time: "start time cannot current time"
   admin:
     tours:
       index:
@@ -143,6 +144,13 @@ en:
       $: "$"
       day: "Day"
       number: "(%{number} People)"
+    booking_tour:
+      submit: "Submit"
+      people_number: "People number"
+      phone_number: "Phone number"
+      address: "Address"
+      booking: "booking"
+      close: "Close"
     rating_form:
       add_rating: "Add rating"
       rating: "Rating"
@@ -213,3 +221,11 @@ en:
     destroy:
       success_delete: "Succes delete"
       fail_delete: "Fail delete"
+  bookings:
+    create:
+      success_booking: "Success booking"
+      fail_booking: "Fail booking"
+    load_tour:
+      not_found: "Not found"
+    start_time_booking:
+      start_time: "time is lower than start time"
