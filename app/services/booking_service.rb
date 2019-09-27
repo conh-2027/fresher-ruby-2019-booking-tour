@@ -1,12 +1,12 @@
 class BookingService
   attr_reader :price, :people_number
-  def initialize price, booking
-    @price = tour
+  def initialize booking, price
     @booking = booking
+    @price = price
   end
 
   def total_money
-    @price*@booking.people_number
+    @booking.people_number * @price
   end
 
   def account_balance
@@ -19,5 +19,6 @@ class BookingService
 
   def bank_account_after_booking
     account_balance.update amount: account_balance.amount - total_money
+    @booking.update price: total_money
   end
 end

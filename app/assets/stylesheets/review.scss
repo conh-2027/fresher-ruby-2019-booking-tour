@@ -89,6 +89,13 @@
     border-radius: 50%;
   }
 }
+.review_picture {
+  img {
+    width: 1000px;
+    height: 450px;
+    margin-left: 6px;
+  }
+}
 
 .review_content {
   margin-left: 100px;
