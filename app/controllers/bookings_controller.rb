@@ -4,12 +4,14 @@ class BookingsController < ApplicationController
   def create
     @booking = current_user.bookings.build booking_params
     @booking.tour = @tour
-    booking_sercise = BookingService.new(@booking, params[:tour_price].to_i)
-    byebug
-    if booking_sercise.booking_request? && @booking.save!
-      booking_sercise.bank_account_after_booking
-      respond_to :js
+    booking_service = BookingService.new(@booking, params[:tour_price].to_i)
+    @booking_request = booking_service.booking_request?
+    @balance_is_not = t ".balance_is_not"
+    
+    if @booking_request && @booking.save
+      booking_service.bank_account_after_booking
     end
+    respond_to :js
   end
 
   private

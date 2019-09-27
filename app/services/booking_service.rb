@@ -18,7 +18,6 @@ class BookingService
   end
 
   def bank_account_after_booking
-    byebug
     account_balance.update amount: account_balance.amount - total_money
   end
 end

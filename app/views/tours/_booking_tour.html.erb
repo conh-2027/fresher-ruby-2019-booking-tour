@@ -9,13 +9,13 @@
         <h4 class="modal-title"><%= @tour.name %></h4>
       </div>
       <div class="modal-body">
-        <%= form_for :booking,  url: tour_bookings_path(@tour),
-           method: :post, remote: true do |f| %>
-          <div class="rate_error"></div>
+        <%= form_for [@tour, @tour.bookings.build], method: :post, remote: true do |f| %>
           <div class="star_content">
             <div class="form-group booking-picture">
               <%= image_tag tour_picture(@tour) %>
             </div>
+            <div class="booking_fail"></div>
+            <div class="account_not_enough"></div>
             <div class="form-group">
               <%= f.label :start_time %>
               <%= f.date_field :start_time, class: "form-control" %>
@@ -42,7 +42,7 @@
               <%= f.text_field :address, class: "form-control" %>
             </div>
             <div class="form-group">
-              <%=  f.submit t(".submit"), type: :submit, class: "btn btn-info", id: "success_booking", data: {toggle: "modal", target: "#success_booking"} %>
+              <%=  f.submit t(".submit"), type: :submit, class: "btn btn-info",  disable_with: false %>
             </div>
           </div>
         <% end %>
@@ -54,9 +54,7 @@
   </div>
 </div>
 
-
 <button type="button" id="btn_notification" class="d-none" data-toggle="modal" data-target="#notification"></button>
-
 <!-- Modal -->
 <div class="modal fade" id="notification" tabindex="-1" role="dialog" aria-labelledby="notificationLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">

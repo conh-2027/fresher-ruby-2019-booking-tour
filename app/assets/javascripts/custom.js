@@ -36,7 +36,10 @@ $(document).on("turbolinks:load", function(){
       $('#booking_price').val(0);
     }
   }
-  $('#booking').on('submit', function() {
-    $('#success_booking').modal('show');
-  });
+  
+  $('#book_tour').on('click', function(){
+    $('.booking_fail').html('');
+    $('.account_not_enough').html('');
+    $('#new_booking')[0].reset();
+  })
 });

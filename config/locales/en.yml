@@ -53,7 +53,7 @@ en:
         revenue: "Revenue"
         category: "Category"
     header:
-      travello: "Travello Viet name"
+      travello: "Travello VietNam"
       hotline: "Call us: 00-56 445 678 33"
       profile: "Profile"
       sign_out: "Sign out"
@@ -225,7 +225,12 @@ en:
     create:
       success_booking: "Success booking"
       fail_booking: "Fail booking"
+      balance_is_not: "Your account balance is not enough to make a transaction"
     load_tour:
       not_found: "Not found"
     start_time_booking:
       start_time: "time is lower than start time"
+    success:
+      join_community: "Join The Global Travello Community!"
+      happiness: "Happiness is Travelling"
+      success: "Success"
