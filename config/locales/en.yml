@@ -31,6 +31,8 @@ en:
         destroy_fail: "Destroy fail"
       load_tour:
         not_found: "Not found"
+      search:
+        search: "Search"
   shared:
     error_messages:
       error: "error"

@@ -1,5 +1,6 @@
 validate:
   VALID_REGEX_EMAIL: !ruby/regexp '/\A[^@\s]+@[^@\s]+\z/'
+default_sort: created_at desc"
 avatar: "team_1.jpg"
 users:
   email:

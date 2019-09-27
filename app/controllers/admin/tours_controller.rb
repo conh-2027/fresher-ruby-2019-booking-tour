@@ -1,10 +1,6 @@
 class Admin::ToursController < Admin::BaseController
   before_action :load_tour, only: %i(edit update destroy)
-  
-  def index
-    @tours = Tour.last_tours.page(params[:page])
-      .per Settings.paging.paging_number
-  end
+  before_action :set_search, only: :index
 
   def new
     @tour = Tour.new
