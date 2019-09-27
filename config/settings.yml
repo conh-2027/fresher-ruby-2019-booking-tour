@@ -32,6 +32,7 @@ row_default: 12
 time_post_review: "%B %e, %Y at %I:%M %p"
 date_format: "%m/%d/%Y"
 review_content: 100
+picture_size: "900x450"
 bank_accounts:
   amount: 0
 bookings:
