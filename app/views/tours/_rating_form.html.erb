@@ -13,7 +13,7 @@
           remote: true, method: :post do |f| %>
           <div class="rate_error"></div>
           <div class="star_content">
-            <label><%= t ".quantity" %></label>
+            <label><%= "Quantity" %></label>
             <div class="form-group">
               <%= f.hidden_field :star, value: Settings.max_star %>
               <% Settings.max_star.times do |i| %>
@@ -23,13 +23,13 @@
                <% end %>
             </div>
             <div class="form-group">
-              <%= f.button t(".submit"), type: :submit, class: "btn btn-info" %>
+              <%= f.button "Submit", type: :submit, class: "btn btn-info" %>
             </div>
           </div>
         <% end %>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal"><%= t ".close" %></button>
+        <button type="button" class="btn btn-default" data-dismiss="modal"><%= "Close" %></button>
       </div>
     </div>
   </div>

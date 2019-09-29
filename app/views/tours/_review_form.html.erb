@@ -1,7 +1,7 @@
-<button type="button" class="btn-lg home_search_button"
-  data-toggle="modal" data-target="#review_tour">
-  <%= t ".add_review" %>
-</button>
+  <button type="button" class="btn-lg home_search_button"
+    data-toggle="modal" data-target="#review_tour">
+    <%= t ".add_review" %>
+  </button>
 <div class="modal fade" id="review_tour" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -11,8 +11,8 @@
       <div class="modal-body">
         <%= form_for [@tour, @review],
           remote: true, method: :post do |f| %>
-          <div class="reivew_error"></div>
-          <div class="review_content">
+          <div class="review_error"></div>
+          <div class="review_content_form">
             <div class="form-group">
               <%= f.label :content, t(".content") %>
               <%= f.text_area :content, class: "form-control", rows: Settings.row_default,
@@ -30,7 +30,7 @@
         <% end %>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal"><%= t ".close" %></button>
+        <button type="button" class="btn btn-default" data-dismiss="modal" id= "btn_review" ><%= t ".close" %></button>
       </div>
     </div>
   </div>

@@ -16,9 +16,11 @@ class Tour < ApplicationRecord
 
   scope :last_tours, ->{order created_at: :desc}
   scope :user_rated, -> {includes(:ratings).count(:user_id)}
+  scope :tour_with_rating, ->{joins(:ratings).select("tours.*, avg(ratings.star) as average_star, count(ratings.id) as number_of_tours")
+    .group(:tour_id).order("average_star DESC, number_of_tours DESC")}
   delegate :name, to: :category, prefix: true, allow_nil: true
   accepts_nested_attributes_for :picture, allow_destroy: true
-  
+
   TOUR_PARAMS = [:name, :description, :duration, :price, :category_id,
     picture_attributes: %i(id picture_link _destroy)]
   PARAMS_SEARCH = %w(name description duration price).freeze

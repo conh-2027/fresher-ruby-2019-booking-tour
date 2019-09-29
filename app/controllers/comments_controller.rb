@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :require_user_login, only: %i(create reply edit destroy)
+  # before_action :authenticate_user!
   before_action :load_commentable
   before_action :load_comment, except: %i(index create)
   

@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  devise_for :users, controllers: {omniauth_callbacks: "users/omniauth_callbacks", sessions: "users/sessions"}
   root to: "tours#index"
   resources :tours, only: %i(index show) do
     resources :ratings, only: :create
     resources :reviews
-    resources :bookings
+    resources :bookings, only: %i(new create)
   end
   resources :reviews do
     resources :likes
@@ -17,10 +19,10 @@ Rails.application.routes.draw do
     resources :comments
   end
   resources :bank_accounts
-  devise_for :users, controllers: {omniauth_callbacks: "users/omniauth_callbacks", sessions: "users/sessions"}
   
   namespace :admin do
     get "/dashboard", to: "base#index"
     resources :tours
+    resources :users
   end
 end

@@ -1,5 +1,6 @@
 class BookingsController < ApplicationController
-  before_action :authenticate_user!, :load_tour, only: :create
+  before_action :require_user_login
+  before_action :load_tour
 
   def create
     @booking = current_user.bookings.build booking_params

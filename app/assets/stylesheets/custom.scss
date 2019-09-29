@@ -17,6 +17,7 @@
 @import 'animate';
 @import 'sb-admin-2';
 @import 'variables.scss';
+
 .background_image {
   background-image:url(home_slider.jpg);
 }
@@ -175,4 +176,7 @@ container-bank-accounts {
   color: red;
   font-size: 18px;
   font-family: serif;
+}
+a.booking_no_login {
+  text-decoration: none;
 }

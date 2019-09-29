@@ -42,4 +42,9 @@ $(document).on("turbolinks:load", function(){
     $('.account_not_enough').html('');
     $('#new_booking')[0].reset();
   })
+  $('#btn_review').on('click', function(){
+    $('.review_error').html('');
+    $('#new_review')[0].reset();
+    $('#review_content').html('');
+  });
 });

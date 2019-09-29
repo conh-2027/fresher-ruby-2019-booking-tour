@@ -13,6 +13,7 @@ class BankAccountsController < ApplicationController
   def create
     @bank_account = current_user.bank_accounts.build bank_account_params
     @bank_account.amount_bank_acount
+    
     if @bank_account.save
       flash[:success] = t ".success_create"
       redirect_to bank_accounts_path
@@ -23,7 +24,7 @@ class BankAccountsController < ApplicationController
   end
   
   def update
-    if @bank_accout.update bank_account_params
+    if @bank_account.update bank_account_params
       flash.now[:success] = t ".success_update"
       redirect_to bank_accounts_path
     else

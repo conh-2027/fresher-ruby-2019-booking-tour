@@ -87,6 +87,8 @@ en:
   users:
     sessions:
       new:
+        email: "E-mail"
+        password: "Password"
         login: "Login"
         remember_me: "Remember me"
         new_user: "New user?"
@@ -144,6 +146,8 @@ en:
       $: "$"
       day: "Day"
       number: "(%{number} People)"
+    load_tour:
+      not_found: "Not found"
     booking_tour:
       submit: "Submit"
       people_number: "People number"
@@ -204,7 +208,7 @@ en:
       amount: "Amount: "
       $: " $"
       edit: "Edit"
-      are_you_sure: "Are you sure?"
+      are_you_sure?: "Are you sure?"
       delete: "Delete"
     edit:
       edit_card: "edit card"
@@ -234,3 +238,16 @@ en:
       join_community: "Join The Global Travello Community!"
       happiness: "Happiness is Travelling"
       success: "Success"
+  ratings:
+    create:
+      success_create: "Success create"
+    load_tour:
+      not_found: "Not found"
+  reviews:
+    create:
+      success_created: "Success create"
+      fail_create: "Fail create"
+    load_tour:
+      not_found: "Not found"
+    load_review:
+      not_found: "Not found"

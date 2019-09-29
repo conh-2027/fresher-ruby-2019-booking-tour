@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
+  before_action :require_user_login
   before_action :load_tour, only: :create
-  before_action :load_review, only: :show
-  before_action :authenticate_user!
+  before_action :load_review, only: %i(edit update)
 
   def new
     @review = Review.new
@@ -15,7 +15,17 @@ class ReviewsController < ApplicationController
       flash[:success] = t ".success_created"
       redirect_to @tour
     else
-      render :new
+      flash[:danger] = t ".fail_create"
+      respond_to :js
+    end
+  end
+
+  def update
+    if @review.update review_params
+      flash[:success] = "Success Update"
+      redirect_to @review
+    else
+      render :edit
     end
   end
 

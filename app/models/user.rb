@@ -35,13 +35,13 @@ class User < ApplicationRecord
           Settings.users.max_password_length]
       end
     end
+  end
 
-    def new_with_session params, session
-      tap do |user|
-        if data = session["devise.#facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
-          next unless user.email.blank?
-          user.email = data["email"]
-        end
+  def new_with_session params, session
+    tap do |user|
+      if data = session["devise.#facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
+        next unless user.email.blank?
+        user.email = data["email"]
       end
     end
   end

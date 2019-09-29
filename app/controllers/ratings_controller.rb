@@ -1,19 +1,19 @@
 class RatingsController < ApplicationController
   before_action :load_tour
-  before_action :authenticate_user!, only: :create
+  before_action :require_user_login, only: :create
 
   def create
-    @rating = current_user.ratings.build rating_params
-    @rating.tour_id = params[:tour_id]
-    
-    if @rating.save
+    @rated = Rating.user_rated(current_user.id, params[:tour_id])
+
+    if @rated.blank?
+      @rating = current_user.ratings.build rating_params
+      @rating.tour_id = params[:tour_id]
+      @rating.save
       flash[:success] = t ".success_create"
-      redirect_to @tour
     else
-      respond_to do |format|
-        format.js
-      end
+      @rated.update star: params[:rating][:star].to_i
     end
+    redirect_to @tour
   end
 
   private
