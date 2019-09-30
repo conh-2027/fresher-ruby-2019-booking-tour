@@ -15,7 +15,7 @@ module ToursHelper
     arr_stars = tour.ratings.pluck :star
     
     return 0 if arr_stars.empty?
-    arr_stars.inject(0.0){ |sum, star| sum += star }.to_f / arr_stars.size
+    arr_stars.inject(:+).to_f/ arr_stars.size
   end
 
   def tour_with_review_likes

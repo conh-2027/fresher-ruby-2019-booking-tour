@@ -1,7 +1,7 @@
 class BankAccount < ApplicationRecord
   belongs_to :user
   validates :name, presence: true
-  validates :account_number, presence: true
+  validates :account_number, presence: true, uniqueness: { case_sensitive: false}
   validates :amount, presence: true
   validates_numericality_of :amount, greater_than_or_equal_to: Settings.bank_accounts.amount
   delegate :name, to: :user, prefix: true

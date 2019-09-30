@@ -9,7 +9,9 @@
 							</div>
 							<nav class="main_nav">
 								<ul class="d-flex flex-row align-items-start justify-content-start">
+								<% if current_user %>
 									<li class="active"><%= link_to "My account", bank_accounts_path, "data-turbolinks": false %></li>
+								<% end %>
 								</ul>
 							</nav>
 

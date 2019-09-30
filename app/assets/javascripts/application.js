@@ -14,7 +14,6 @@
 //= require customs
 //= require sb-admin-2.js
 //= require jquery.easing
-//= require parallax.min.js
 //= require isotope.pkgd.min.js
 //= require jquery.scrollTo.min.js
 //= require owl.carousel.js
