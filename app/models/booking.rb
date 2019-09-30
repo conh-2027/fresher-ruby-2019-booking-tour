@@ -8,6 +8,7 @@ class Booking < ApplicationRecord
   validates :address, presence: true
   validates :start_time, presence: true
   validate :start_time_booking
+  enum status: {process: 0, success: 1}
   BOOKING_PARAMS = %i(price phone_number people_number address start_time)
 
   private

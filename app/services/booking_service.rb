@@ -20,5 +20,6 @@ class BookingService
   def bank_account_after_booking
     account_balance.update amount: account_balance.amount - total_money
     @booking.update price: total_money
+    @booking.update status: "success"
   end
 end

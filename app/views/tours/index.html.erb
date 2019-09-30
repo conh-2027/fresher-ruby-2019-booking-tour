@@ -93,8 +93,27 @@
 
 	
 	<%= render "intro" %>
-	<!-- popular -->
+	<% if params[:search].present? %>
+	<div class="destinations" id="destinations">
+			<div class="container">
+				<div class="row">
+					<div class="col text-center">
+						<div class="section_subtitle">simply amazing places</div>
+						<div class="section_title"><h2>Result search</h2></div>
+					</div>
+				</div>
+				<div class="row destinations_row">
+					<div class="col">
+						<div class="destinations_container item_grid">
 
+							<!-- Destination -->
+							<%= render partial: "tour", collection: @tours, as: :tour %>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	<% end %>
 		<div class="destinations" id="destinations">
 			<div class="container">
 				<div class="row">
@@ -115,6 +134,8 @@
 			</div>
 		</div>
 
+		<!-- popular -->
+		
 		<!-- rating -->
 
 		<div class="destinations" id="testimonials">
@@ -122,7 +143,7 @@
 				<div class="row">
 					<div class="col text-center">
 						<div class="section_subtitle">simply amazing places</div>
-						<div class="section_title"><h2>New</h2></div>
+						<div class="section_title"><h2>Rating</h2></div>
 					</div>
 				</div>
 				<div class="row destinations_row">
@@ -151,7 +172,7 @@
 						<div class="destinations_container item_grid">
 
 							<!-- Destination -->
-							<%= render partial: "tour", collection: @tour_lastest, as: :tour %>
+							<%= render partial: "tour", collection:@tour_lastest, as: :tour %>
 						</div>
 					</div>
 				</div>

@@ -48,3 +48,20 @@ $(document).on("turbolinks:load", function(){
     $('#review_content').html('');
   });
 });
+
+$(document).on('scroll', function()
+{
+  header = $('.header');
+  headerSocial = $('.header_social');
+
+  if($(window).scrollTop() > 127)
+  {
+    header.addClass('scrolled');
+    headerSocial.addClass('scrolled');
+  }
+  else
+  {
+    header.removeClass('scrolled');
+    headerSocial.removeClass('scrolled');
+  }
+});

@@ -12,18 +12,15 @@ class ApplicationController < ActionController::Base
     @search.build_sort if @search.sorts.empty?
   end
 
-  def after_sign_in_path_for user
-    session[:forward_url] ? session.delete(:forward_url) : super
-  end
-  
   def require_user_login
     unless user_signed_in?
-      session[:forward_url] = request.fullpath
+      session[:tour_id] = params[:tour_id]
       redirect_to new_user_session_path
     end
   end
   
   protected
+
   
   def set_ransack_auth_object
     current_user&.admin? ? :admin : nil

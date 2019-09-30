@@ -6,7 +6,7 @@ class Users::SessionsController < Devise::SessionsController
     if user.admin?
       rails_admin_url
     else
-      root_url
+      session[:tour_id] ? tour_path(session[:tour_id]) : super
     end
   end
 end

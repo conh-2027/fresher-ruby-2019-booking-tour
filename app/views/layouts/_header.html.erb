@@ -9,9 +9,7 @@
 							</div>
 							<nav class="main_nav">
 								<ul class="d-flex flex-row align-items-start justify-content-start">
-									<li class="active">	<%= link_to "Home", root_path, "data-turbolinks": false %></li>
-									<li><%= link_to "My account",bank_accounts_path, "data-turbolinks": false %></li>
-									
+									<li class="active"><%= link_to "My account", bank_accounts_path, "data-turbolinks": false %></li>
 								</ul>
 							</nav>
 
@@ -27,6 +25,7 @@
 			</div>
 		</div>
 		<div class="header_social d-flex flex-row align-items-center justify-content-start">
+		<div class="main_nav">
 			<ul class="d-flex flex-row align-items-start justify-content-start">
 				<% if user_signed_in? %>
 					<li class="dropdown">
@@ -35,10 +34,10 @@
 						<% end %>
 						<%= image_tag get_avatar(current_user), class: "img-profile rounded-circle w-10" %>
 						<ul class="dropdown-menu">
-								<li class="dropdown-item">
+								<li class="dropdown-item profile">
 									<%= link_to t(".profile"), edit_user_registration_path(current_user) %>
 								</li>
-								<li class="dropdown-item">
+								<li class="dropdown-item profile">
 									<%= link_to t(".sign_out"), destroy_user_session_path, method: :delete %>
 								</li>
 						</ul>
@@ -58,6 +57,7 @@
         
         <div class="menu_phone ml-auto">Call us: 00-56 445 678 33</div>
 			</ul>
+		</div>
 		</div>
 	</header>
 
