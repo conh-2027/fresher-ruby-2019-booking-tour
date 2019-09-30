@@ -55,4 +55,5 @@ class BankAccountsController < ApplicationController
     flash[:danger] = t ".not_found"
     redirect_to bank_accounts_path
   end
+
 end

@@ -26,7 +26,9 @@ li.comment {
     margin-bottom: 0;
   }
   .comment-content {
-
+    color: black;
+    font-weight: 600;
+ 
   }
   .comment-info {
     color: $commet-info;
@@ -34,8 +36,11 @@ li.comment {
     a {
       color: $commet-info;
       &:hover {
-        color: aquamarine;
+        color:black;
       }
+    }
+    small{
+      color: #05abc7f5;
     }
   }
   margin-bottom: 1.3em;
