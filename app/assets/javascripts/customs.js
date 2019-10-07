@@ -1,5 +1,6 @@
 
 $(document).on("turbolinks:load", function(){
+  
   $(".star_content .star").click(function(){
     star = $(this).find("i").attr("value");
     $("#rating_star").val(star);
@@ -47,6 +48,7 @@ $(document).on("turbolinks:load", function(){
     $('#new_review')[0].reset();
     $('#review_content').html('');
   });
+
 });
 
 $(document).on('scroll', function()
@@ -64,4 +66,40 @@ $(document).on('scroll', function()
     header.removeClass('scrolled');
     headerSocial.removeClass('scrolled');
   }
+});
+$(document).ready(function(){
+  let showChar = 100;  // How many characters are shown by default
+  let ellipsestext = "";
+  let moretext = "Show less";
+  let lesstext = " Show more";
+  
+
+  $('.more').each(function() {
+    let content = $(this).html();
+    
+    if(content.length > showChar) {
+      
+      let c = content.substr(0, showChar);
+      let h = content.substr(showChar, content.length - showChar);
+      
+      let html = c + '<span class="moreellipses">' + ellipsestext + '&nbsp;</span><span class="morecontent"><span>' + h + '</span>&nbsp;&nbsp;<a href="" class="morelink">' + moretext + '</a></span>';
+      
+      $(this).html(html);
+    }
+    
+  });
+  
+  $(".morelink").on('click', function(){
+
+    if($(this).hasClass("less")) {
+      $(this).removeClass("less");
+      $(this).html(moretext);
+    } else {
+      $(this).addClass("less");
+      $(this).html(lesstext);
+    }
+    $(this).parent().prev().toggle();
+    $(this).prev().toggle();
+    return false;
+  })
 });

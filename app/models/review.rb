@@ -11,4 +11,5 @@ class Review < ApplicationRecord
   REVIEW_PARAMS = [:content, picture_attributes: %i(id picture_link _destroy)].freeze
   scope :with_likes, -> {joins(:likes).select("reviews.*, sum(likes.user_id) as user_liked, count(likes.review_id) as review_of_likes")
     .group(:review_id).order("user_liked DESC, review_of_likes DESC")}
+  scope :last_review, ->{order created_at: :desc}
 end

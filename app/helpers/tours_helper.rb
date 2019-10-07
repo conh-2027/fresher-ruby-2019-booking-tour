@@ -21,4 +21,7 @@ module ToursHelper
   def tour_with_review_likes
     Review.with_likes.includes(:tour).map(&:tour)
   end
+  def current_user_rated user, tour
+    Rating.find_by(user_id: user.id, tour_id: tour.id).present? ? true : false
+  end
 end

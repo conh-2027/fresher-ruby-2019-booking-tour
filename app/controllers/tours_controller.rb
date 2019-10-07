@@ -10,7 +10,7 @@ class ToursController < ApplicationController
   def show
     @ratings = @tour.ratings
     @review = Review.new
-    @reviews = @tour.reviews
+    @reviews = @tour.reviews.page(params[:page]).per 4
   end
 
   private

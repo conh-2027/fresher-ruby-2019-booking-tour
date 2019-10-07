@@ -12,11 +12,35 @@ Tour.create(
   description: "Thời nhà Nguyễn có 13 vị vua nhưng chỉ có 7 lăng tẩm được xây dựng.
     Mỗi khu vực lăng tẩm đều được chính nhà vua lựa chọn vị trí và kiến trúc nên mỗi 
     lăng tẩm tại nơi đây lại mang những nét kiến trúc riêng với những chi tiết chạm khắc tinh xảo,
+    độc đáo. Đặc sắc nhất phải kể tới Lăng Tự Đức, Lăng Minh Mạng và Lăng Khải Định.Thời nhà Nguyễn có 13 vị vua nhưng chỉ có 7 lăng tẩm được xây dựng.
+    Mỗi khu vực lăng tẩm đều được chính nhà vua lựa chọn vị trí và kiến trúc nên mỗi 
+    lăng tẩm tại nơi đây lại mang những nét kiến trúc riêng với những chi tiết chạm khắc tinh xảo,
+    độc đáo. Đặc sắc nhất phải kể tới Lăng Tự Đức, Lăng Minh Mạng và Lăng Khải Định.Thời nhà Nguyễn có 13 vị vua nhưng chỉ có 7 lăng tẩm được xây dựng.
+    Mỗi khu vực lăng tẩm đều được chính nhà vua lựa chọn vị trí và kiến trúc nên mỗi 
+    lăng tẩm tại nơi đây lại mang những nét kiến trúc riêng với những chi tiết chạm khắc tinh xảo,
+    độc đáo. Đặc sắc nhất phải kể tới Lăng Tự Đức, Lăng Minh Mạng và Lăng Khải Định.Thời nhà Nguyễn có 13 vị vua nhưng chỉ có 7 lăng tẩm được xây dựng.
+    Mỗi khu vực lăng tẩm đều được chính nhà vua lựa chọn vị trí và kiến trúc nên mỗi 
+    lăng tẩm tại nơi đây lại mang những nét kiến trúc riêng với những chi tiết chạm khắc tinh xảo,
+    độc đáo. Đặc sắc nhất phải kể tới Lăng Tự Đức, Lăng Minh Mạng và Lăng Khải Định.Thời nhà Nguyễn có 13 vị vua nhưng chỉ có 7 lăng tẩm được xây dựng.
+    Mỗi khu vực lăng tẩm đều được chính nhà vua lựa chọn vị trí và kiến trúc nên mỗi 
+    lăng tẩm tại nơi đây lại mang những nét kiến trúc riêng với những chi tiết chạm khắc tinh xảo,
+    độc đáo. Đặc sắc nhất phải kể tới Lăng Tự Đức, Lăng Minh Mạng và Lăng Khải Định.Thời nhà Nguyễn có 13 vị vua nhưng chỉ có 7 lăng tẩm được xây dựng.
+    Mỗi khu vực lăng tẩm đều được chính nhà vua lựa chọn vị trí và kiến trúc nên mỗi 
+    lăng tẩm tại nơi đây lại mang những nét kiến trúc riêng với những chi tiết chạm khắc tinh xảo,
+    độc đáo. Đặc sắc nhất phải kể tới Lăng Tự Đức, Lăng Minh Mạng và Lăng Khải Định.Thời nhà Nguyễn có 13 vị vua nhưng chỉ có 7 lăng tẩm được xây dựng.
+    Mỗi khu vực lăng tẩm đều được chính nhà vua lựa chọn vị trí và kiến trúc nên mỗi 
+    lăng tẩm tại nơi đây lại mang những nét kiến trúc riêng với những chi tiết chạm khắc tinh xảo,
+    độc đáo. Đặc sắc nhất phải kể tới Lăng Tự Đức, Lăng Minh Mạng và Lăng Khải Định.Thời nhà Nguyễn có 13 vị vua nhưng chỉ có 7 lăng tẩm được xây dựng.
+    Mỗi khu vực lăng tẩm đều được chính nhà vua lựa chọn vị trí và kiến trúc nên mỗi 
+    lăng tẩm tại nơi đây lại mang những nét kiến trúc riêng với những chi tiết chạm khắc tinh xảo,
+    độc đáo. Đặc sắc nhất phải kể tới Lăng Tự Đức, Lăng Minh Mạng và Lăng Khải Định.Thời nhà Nguyễn có 13 vị vua nhưng chỉ có 7 lăng tẩm được xây dựng.
+    Mỗi khu vực lăng tẩm đều được chính nhà vua lựa chọn vị trí và kiến trúc nên mỗi 
+    lăng tẩm tại nơi đây lại mang những nét kiến trúc riêng với những chi tiết chạm khắc tinh xảo,
     độc đáo. Đặc sắc nhất phải kể tới Lăng Tự Đức, Lăng Minh Mạng và Lăng Khải Định.",
   duration: rand(1..10),
   price: rand(1..20),
   category_id: 1,
-  picture_attributes: {picture_link: Rails.root.join("app/assets/images/Xung_Khiêm_Tạ,_Lăng_Tự_Đức.jpeg").open}
+  picture_attributes: {picture_link: Rails.root.join("app/assets/images/destination_1.jpg").open}
 )
 Tour.create(
   name:  "Chùa Thiên Mụ",
