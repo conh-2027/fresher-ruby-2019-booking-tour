@@ -19,6 +19,7 @@ gem "jquery-easing-rails"
 gem "jquery-rails"
 gem "jquery-ui-rails"
 gem "ransack"
+gem "searchkick"
 gem "kaminari"
 gem "mini_racer"
 gem "mysql2", ">= 0.4.4", "< 0.6.0"
@@ -41,7 +42,7 @@ group :development, :test do
 end
 
 group :development do
-  gem 'rails-erd'
+  gem "rails-erd"
   gem "listen", ">= 3.0.5", "< 3.2"
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"

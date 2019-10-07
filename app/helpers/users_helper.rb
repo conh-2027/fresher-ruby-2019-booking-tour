@@ -8,5 +8,4 @@ module UsersHelper
       Settings.avatar
     end
   end
-
 end

@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :comments do
     resources :comments
   end
+  get "search", to: "searchs#search"
   resources :bank_accounts
   
   namespace :admin do

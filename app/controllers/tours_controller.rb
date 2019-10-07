@@ -1,5 +1,5 @@
-class ToursController < ApplicationController
-  before_action :set_search, only: :index
+class ToursController < SearchsController
+  before_action :search,only: %i(index show)
   before_action :load_tour, only: :show
   
   def index

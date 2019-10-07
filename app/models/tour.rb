@@ -1,4 +1,5 @@
 class Tour < ApplicationRecord
+  searchkick
   belongs_to :category
   has_one :picture, as: :picturetable, dependent: :destroy
   has_many :bookings, dependent: :destroy
@@ -27,6 +28,19 @@ class Tour < ApplicationRecord
   
   def load_picture
     self.build_picture ||= self.picture
+  end
+
+  def search_data
+    attributes.merge(
+      category_name: category(&:name)
+    )
+    # {
+    # name: name,
+    # description: description,
+    # duration: duration,
+    # price: price,
+    # category_id: category_id
+    # }
   end
 
   private
