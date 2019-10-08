@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
+  before_action :load_tour, only: :create
   before_action :require_user_login
-  before_action :load_tour
 
   def create
     @booking = current_user.bookings.build booking_params
@@ -19,13 +19,5 @@ class BookingsController < ApplicationController
 
   def booking_params
     params.require(:booking).permit Booking::BOOKING_PARAMS
-  end
-
-  def load_tour
-    @tour = Tour.find_by id: params[:tour_id]
-
-    return if @tour
-    flash[:danger] = t ".not_found"
-    redirect_to tours_path
   end
 end

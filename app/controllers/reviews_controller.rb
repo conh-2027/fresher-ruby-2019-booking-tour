@@ -35,14 +35,6 @@ class ReviewsController < ApplicationController
     params.require(:review).permit Review::REVIEW_PARAMS
   end
 
-  def load_tour
-    @tour = Tour.find_by id: params[:tour_id]
-
-    return if @tour
-    flash[:danger] = t ".not_found"
-    redirect_to root_path
-  end
-
   def load_review
     @review = Review.find_by id: params[:id]
 

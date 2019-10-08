@@ -1,5 +1,5 @@
-class ToursController < SearchsController
-  before_action :search,only: %i(index show)
+class ToursController < ApplicationController
+  before_action :set_search, only: :index
   before_action :load_tour, only: :show
   
   def index
@@ -8,7 +8,6 @@ class ToursController < SearchsController
   end
   
   def show
-    @ratings = @tour.ratings
     @review = Review.new
     @reviews = @tour.reviews
   end

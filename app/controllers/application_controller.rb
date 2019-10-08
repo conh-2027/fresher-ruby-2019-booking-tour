@@ -19,6 +19,14 @@ class ApplicationController < ActionController::Base
     end
   end
   
+  def load_tour
+    @tour = Tour.find_by id: params[:tour_id]
+
+    return if @tour
+    flash[:danger] = t ".not_found"
+    redirect_to tours_path
+  end
+
   protected
 
   

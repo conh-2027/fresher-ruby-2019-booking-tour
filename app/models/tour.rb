@@ -1,5 +1,7 @@
+require 'elasticsearch/model'
 class Tour < ApplicationRecord
-  searchkick
+  include Elasticsearch::Model
+  include Elasticsearch::Model::Callbacks
   belongs_to :category
   has_one :picture, as: :picturetable, dependent: :destroy
   has_many :bookings, dependent: :destroy
@@ -30,18 +32,27 @@ class Tour < ApplicationRecord
     self.build_picture ||= self.picture
   end
 
-  def search_data
-    attributes.merge(
-      category_name: category(&:name)
-    )
-    # {
-    # name: name,
-    # description: description,
-    # duration: duration,
-    # price: price,
-    # category_id: category_id
-    # }
-  end
+  	
+def self.search query
+  __elasticsearch__.search(
+    {
+      query: {
+        multi_match: {
+          query: query,
+          fields: ['name', 'description']
+        }
+      },
+      highlight: {
+        pre_tags: ['<em>'],
+        post_tags: ['</em>'],
+        fields: {
+          name: {},
+          description: {},
+        }
+      }
+    }
+  )
+end
 
   private
 

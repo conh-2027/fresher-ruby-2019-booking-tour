@@ -6,7 +6,7 @@
   <div class="average-review-rating" data-score=<%= review_average(tour) %>>
   </div>
   <div class="destination_content">
-    <div class="destination_title"><%=  link_to truncate(tour.name, length: 27), tour   %></div>
+    <div class="destination_title"><%=  link_to truncate(tour.name, length: 27), tour, "data-turbolinks": false  %></div>
     <div class="destination_subtitle">
       <p><%= truncate tour.description, length: Settings.length_description %></p>
     </div>

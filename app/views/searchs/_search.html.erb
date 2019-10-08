@@ -1,5 +1,6 @@
 <div class="destination item">
   <div class="destination_image">
+  <% tour = Tour.find(tour.id) %>
     <%= image_tag tour_picture(tour) %>
     <div class="spec_offer text-center"><%= link_to tour.category_name, "#" %></div>
   </div>

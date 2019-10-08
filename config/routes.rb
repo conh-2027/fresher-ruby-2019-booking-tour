@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users, controllers: {omniauth_callbacks: "users/omniauth_callbacks", sessions: "users/sessions"}
   root to: "tours#index"
-  resources :tours, only: %i(index show) do
+  resources :tours do
     resources :ratings, only: :create
     resources :reviews
     resources :bookings, only: %i(new create)

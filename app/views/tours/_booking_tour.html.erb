@@ -1,7 +1,11 @@
-<button type="button" class="btn-lg home_search_button"
-  data-toggle="modal" data-target="#booking">
-  <%= t ".booking" %>
-</button>
+<% if current_user&.bank_accounts.any? %>
+  <button type="button" class="btn-lg home_search_button"
+    data-toggle="modal" data-target="#booking">
+    <%= t ".booking" %>
+  </button>
+<% else %>
+  <%= render "bank_accounts/form" %>
+<% end %>
 
 <div class="modal fade" id="booking" role="dialog">
   <div class="modal-dialog">
@@ -44,8 +48,11 @@
             </div>
             <div>
             <% if current_user %>
-              
-              <%= select_tag :bank_account,options_for_select(load_bank_account(current_user),  current_user.bank_accounts.first.name), class: "form-control" %>
+              <% if current_user.bank_accounts.any? %>
+                <%= select_tag :bank_account,options_for_select(load_bank_account(current_user),  current_user.bank_accounts.pluck(:name)), class: "form-control" %>
+              <% else %>
+                 <%= render "bank_accounts/form" %>
+              <% end %>
             <% end %>
             </div>
               

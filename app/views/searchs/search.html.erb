@@ -1,19 +1,24 @@
 <h2>Search Results for: <i><%= params[:term] %></i></h2>
- 
-<% if @tours %>
-  <% @tours.with_highlights.each do |tour, highlights| %>
+<% if @tours.any? %>
+  <% @tours.each do |tour| %>
+    <% tour1 = Tour.find(tour.id) %>
   <div class="search_results">
     <div class="destination item">
       <div class="destination_image">
-        <%= image_tag tour_picture(tour) %>
-        <div class="spec_offer text-center"><%= link_to tour.category_name, "#" %></div>
+        <%= image_tag tour_picture(tour1) %>
+        <div class="spec_offer text-center"><%= link_to tour1.category_name, "#" %></div>
       </div>
-      <div class="average-review-rating" data-score=<%= review_average(tour) %>>
+      <div class="average-review-rating" data-score=<%= review_average(tour1) %>>
       </div>
       <div class="destination_content">
-        <div class="destination_title"><%= highlights[:name].present? ? highlights[:name].html_safe : tour.name %></div>
+        <div class="destination_title"><%= tour.highlight.name.present? ? tour.highlight.name[0].html_safe : tour.name %></div>
         <div class="destination_subtitle">
-          <p><%= highlights[:description].html_safe %></p>
+          <% if tour&.highlight&.description %>
+            <% tour.highlight.description.each do |snippet| %>
+              <p><%= snippet.html_safe %></p>            
+            <% end %>
+          <% end %>
+          
         </div>
         <div class="destination_price"><%= "From $" %><%= tour.price %></div>
       </div>
@@ -24,3 +29,5 @@
 <% else %>
   <p>Your search did not match any documents.</p>
 <% end %>
+
+

@@ -4,7 +4,7 @@ module ToursHelper
   end
   
   def tour_picture tour
-    if tour&.picture && tour.picture.picture_link?
+    if tour&.picture&.picture_link?
       tour.picture.picture_link.url
     else
       Settings.tour_picture
