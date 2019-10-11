@@ -1,4 +1,5 @@
 class Tour < ApplicationRecord
+  searchkick word_start: [:name, :description]
   belongs_to :category
   has_one :picture, as: :picturetable, dependent: :destroy
   has_many :bookings, dependent: :destroy
@@ -27,6 +28,23 @@ class Tour < ApplicationRecord
   
   def load_picture
     self.build_picture ||= self.picture
+  end
+
+  def search_data
+    {
+      name: name,
+      description: description
+    }
+  end
+
+  def autocomplete
+    render json: Tour.search(params[:term], {
+      fields: ["name^5", "description"],
+      match: word_start,
+      limit: 10,
+      load: false,
+      misspellings: {below: 5}
+    }).map(&:name)
   end
 
   private

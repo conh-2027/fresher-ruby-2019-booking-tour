@@ -25,4 +25,5 @@ Rails.application.routes.draw do
     resources :tours
     resources :users
   end
+  get "/search", to: "search#search"
 end

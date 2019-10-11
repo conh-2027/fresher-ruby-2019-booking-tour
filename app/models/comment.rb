@@ -9,4 +9,5 @@ class Comment < ApplicationRecord
   scope :no_parent, -> {where parent_id: nil}
   delegate :name, to: :user, prefix: true
   COMMENT_PARAMS = %i(content parent_id review_id)
+
 end
